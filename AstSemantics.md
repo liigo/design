@@ -250,7 +250,7 @@ a value and may appear as children of other expressions.
 
  * `nop`: an empty operator that does not yield a value 
  * `block`: a fixed-length sequence of expressions with a label at the end
- * `loop`: a block with an additional label at the beginning which may be used to form loops
+ * `loop`: a fixed-length sequence of expressions with a label at the beginning
  * `if`: if expression with a *then* expression
  * `if_else`: if expression with *then* and *else* expressions
  * `br`: branch to a given label in an enclosing construct
@@ -283,7 +283,7 @@ The `nop`, `if`, `br`, `br_if`, and `return` constructs do not yield values.
 Other control constructs may yield values if their subexpressions yield values:
 
 * `block`: yields either the value of the last expression in the block or the result of an inner `br` that targeted the label of the block
-* `loop`: yields either the value of the last expression in the loop or the result of an inner `br` that targeted the end label of the loop
+* `loop`: yields either the value of the last expression in the loop
 * `if_else`: yields either the value of the true expression or the false expression
 
 
